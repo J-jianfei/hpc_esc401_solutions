@@ -1,0 +1,91 @@
+Process rank: 9
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 23
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 27
+Duration recorded by gettime function is 0.1522 seconds
+Process rank: 33
+Duration recorded by gettime function is 0.1522 seconds
+Process rank: 34
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 1
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 2
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 3
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 4
+Duration recorded by gettime function is 0.1524 seconds
+Process rank: 5
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 6
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 7
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 8
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 10
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 11
+Duration recorded by gettime function is 0.1522 seconds
+Process rank: 12
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 13
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 14
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 15
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 16
+Duration recorded by gettime function is 0.1524 seconds
+Process rank: 17
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 18
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 19
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 20
+Duration recorded by gettime function is 0.1524 seconds
+Process rank: 21
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 22
+Duration recorded by gettime function is 0.1524 seconds
+Process rank: 24
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 25
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 26
+Duration recorded by gettime function is 0.1524 seconds
+Process rank: 28
+Duration recorded by gettime function is 0.1525 seconds
+Process rank: 29
+Duration recorded by gettime function is 0.1524 seconds
+Process rank: 30
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 31
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 32
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 35
+Duration recorded by gettime function is 0.1523 seconds
+Process rank: 0
+pi is approximately 3.1415926555898399, Error is 0.0000000020000468
+Computed in 0.0499 seconds
+Duration recorded by gettime function is 0.05847 seconds
+
+
+Batch Job Summary Report (version 21.01) for Job "cpi_mpi" (29902338) on daint
+
+Job information (1/2)
+-----------------------------------------------------------------------------------------------------
+             Submit            Eligible               Start                 End    Elapsed Time limit
+------------------- ------------------- ------------------- ------------------- ---------- ----------
+2021-03-12T15:11:24 2021-03-12T15:11:24 2021-03-12T15:11:24 2021-03-12T15:11:29   00:00:05   00:05:00
+-----------------------------------------------------------------------------------------------------
+
+Job information (2/2)
+-------------------------------------------------------------
+    Username      Account    Partition   NNodes        Energy
+------------ ------------ ------------ -------- -------------
+    jjianfei         uzh8        debug        1      0.267 kJ
+
