@@ -1,0 +1,25 @@
+read -p "input a number " val
+start=$(date +%s)
+echo "$val"|grep "^[0-9]*$"
+v="$?"
+if [[ $v -eq 1 ]]
+then echo "$val is not an integer, please restart and input an integer"
+elif [ $val -eq 1 ]
+then echo "$val is not prime"
+elif [ $val -eq 2 ]
+then echo "$val is prime"
+else
+for ((i=2;i<$val;i++))
+do
+if [ $(($val%i)) -eq 0 ]
+then [ $val -ne $(($val%i)) ] && echo "$val is not prime" && break;
+else
+if [ $i -gt $(($val/2)) ]
+then echo "$val is prime"&& break
+fi
+fi
+done
+fi
+end=$(date +%s)
+duration=$(( end - start ))
+echo Duration of computing is $duration seconds.
