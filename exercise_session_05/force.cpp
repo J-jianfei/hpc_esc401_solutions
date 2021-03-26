@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 #include <cmath>
 
 void forces(particles &plist) {
