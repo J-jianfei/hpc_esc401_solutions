@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 
 // Initial conditions
 void ic(particles &plist, int n) {
