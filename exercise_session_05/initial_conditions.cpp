@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <random>
 // Initial conditions
 void ic(particles &plist, int n) {
         std::random_device rd; //Will be used to obtain a seed for the random number engine 
