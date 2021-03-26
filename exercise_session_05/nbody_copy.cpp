@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "forces.h"
 #include "initial_conditions.h"
+#include "particels.h"
 
 
 int main(int argc, char *argv[]) {
