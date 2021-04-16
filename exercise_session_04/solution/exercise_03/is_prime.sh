@@ -11,7 +11,8 @@ if [[ ! $NUMBER =~ ^[0-9]*$ ]]; then
     exit 1
 fi
 
-for ((i = 2 ; i < $NUMBER ; i++)); do
+UPPER_LIMIT=$(echo "scale=0; sqrt($NUMBER+1)" | bc -l)
+for ((i = 2 ; i <= $UPPER_LIMIT ; i++)); do
   if [ $(expr $NUMBER % $i) -eq 0 ]; then
     echo "FALSE, $NUMBER is divisable by $i"
     exit 0
