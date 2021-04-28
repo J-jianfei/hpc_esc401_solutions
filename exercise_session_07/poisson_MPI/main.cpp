@@ -2,13 +2,13 @@
 #include "init.h"
 #include "jacobi.h"
 #include "mpi_module.h"
-
+#include "gettime.h"
 int main(int argc, char *argv[]){
 
 
     int size, my_rank;
     // int min_x,max_x,min_y,max_y;
-
+ double Tstart = getTime();
     start_MPI(&my_rank,&size);
 
 
@@ -56,7 +56,7 @@ int main(int argc, char *argv[]){
     }
     // //final output
     output(p, nstep, u_new, my_rank);
-
     close_MPI();
+double Telapsed = getTime() - Tstart;
     return 0;
 }
