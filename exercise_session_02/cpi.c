@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <sys/time.h>
+#include <omp.h>
 
 static long nSteps = 1000000000;
 static double PI25DT = 3.141592653589793238462643;
@@ -19,6 +20,12 @@ int main(int argc, char** argv){
 	sum = 0.0;
     tStart = getTime();
 
+/*    #pragma omp parallel
+    {
+        printf("Thread rank: %d\n", omp_get_thread_num());
+    }
+
+    #pragma omp parallel for reduction(+:sum)*/
 	for (int i = 0 ; i < nSteps; i ++) {
 	    x = h * ((double)i - 0.5);
 	    sum += 4.0 / (1.0 + x*x);
@@ -31,3 +38,4 @@ int main(int argc, char** argv){
     printf("Computed in %.4g seconds\n", tElapsed);
     return 0;
 }
+

@@ -14,7 +14,7 @@ void forces(particles &plist) {
         int n = plist.size();
         for(int i=0; i<n; ++i) { // We want to calculate the force on all particles
                 plist[i].ax = plist[i].ay = plist[i].az = 0; // start with zero acceleration
-               
+               #pragma omp parallel for
                 for(int j=0; j<n; ++j) { // Depends on all other particles
                         if (i==j) continue; // Skip self interaction 
                         auto dx = plist[j].x - plist[i].x;
@@ -45,7 +45,8 @@ void ic(particles &plist, int n) {
 
 int main(int argc, char *argv[]) {
 	int N[6]; // number of particles
-N[0]=100;N[1]=500;N[2]=1000;N[3]=5000;N[4]=10000;N[5]=20000;N[6]=50000; 
+N[0]=100;N[1]=500;N[2]=1000;N[3]=5000;N[4]=10000;N[5]=20000;N[6]=50000;
+#pragma omp parallel for 
 for( int i=0; i<6; ++i){
 	particles plist; // vector of particles
 double Tstart = getTime();

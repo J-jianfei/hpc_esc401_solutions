@@ -1,7 +1,7 @@
 #include "io.h"
 #include "init.h"
 #include "jacobi.h"
-
+#include "gettime.h"
 int main (int argc, char *argv[]){
 
     const char* file_name="params.txt";
@@ -10,6 +10,7 @@ int main (int argc, char *argv[]){
     params p;
     readParameters(file_name, &p);
 
+    double Tstart = getTime();
     // Initialize the matrices used in the Jacobi iteration
     double **f, **u_old, **u_new;
 
@@ -40,7 +41,11 @@ int main (int argc, char *argv[]){
         printf("Step %d, Diff=%g\n", nstep, diff);
         if (nstep%p.foutput==0) output(p, nstep, u_new);
     }
+
+double Telapsed = getTime() - Tstart;
+printf("computed in %f seconds\n",Telapsed);
     //final output
     output(p, nstep, u_new);
     return 0;
 }
+
