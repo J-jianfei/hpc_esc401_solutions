@@ -4,8 +4,9 @@
 extern "C" double getTime(void);
 
 #define NBIN 1000000000  // Number of bins
-#define NUM_BLOCK  (2*56)  // Number of thread blocks
+#define NUM_BLOCK  (2*300)  // Number of thread blocks
 #define NUM_THREAD  (2*8)  // Number of threads per block
+
 
 // Kernel that executes on the CUDA device
 __global__ void cal_pi(double *sum, int nbin, double step, int nthreads, int nblocks) {
