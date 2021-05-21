@@ -1,6 +1,7 @@
 #include <vector>
 #include <random>
-
+#include <stdio.h>
+#include "gettime.h"
 struct particle {
         float x, y, z; // position 
         float vx, vy, vz; // velocity 
@@ -13,6 +14,7 @@ void forces(particles &plist) {
         int n = plist.size();
         for(int i=0; i<n; ++i) { // We want to calculate the force on all particles
                 plist[i].ax = plist[i].ay = plist[i].az = 0; // start with zero acceleration
+               
                 for(int j=0; j<n; ++j) { // Depends on all other particles
                         if (i==j) continue; // Skip self interaction 
                         auto dx = plist[j].x - plist[i].x;
@@ -42,9 +44,14 @@ void ic(particles &plist, int n) {
 }
 
 int main(int argc, char *argv[]) {
-	int N=20'000; // number of particles
+	int N[6]; // number of particles
+N[0]=100;N[1]=500;N[2]=1000;N[3]=5000;N[4]=10000;N[5]=20000;N[6]=50000; 
+for( int i=0; i<6; ++i){
 	particles plist; // vector of particles
-	ic(plist,N); // initialize starting position/velocity 
+double Tstart = getTime();
+	ic(plist,N[i]); // initialize starting position/velocity 
 	forces(plist); // calculate the forces
+double Telapsed = getTime() - Tstart;
+printf("the number of particles is %d,calculated in %f sec.\n",N[i],Telapsed);}
 	return 0;
 }

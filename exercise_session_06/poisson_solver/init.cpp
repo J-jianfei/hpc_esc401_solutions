@@ -95,7 +95,14 @@ double boundary(double x, double y, int rhs_function){
  *                   The "interior" entries of f store the source term of Poisson eq.
  */
 void init_f(params p, double **f){
-    printf("Function init_f (init.cpp l.97): not implemented.\n");
+    for(int i=0;i<p.nx;i++) {
+    for(int j=0;j<p.ny;j++) {
+    if (i==0 || j==0) {
+    f[i][j]= 1;}
+    else
+    { f[i][j] = 0;}
+}
+}
 }
 
 /**
