@@ -18,9 +18,13 @@ void axpy_gpu(int n, double alpha, const double *x, double* y) {
     int i;
 
     // TODO: offload this loop to the GPU
+#pragma acc data copyin(x[0:n]) copyout(y[0:n])
+#pragma acc kernels 
+{
     for(i = 0; i < n; ++i) {
         y[i] += alpha*x[i];
     }
+}
 }
 
 // version informations
